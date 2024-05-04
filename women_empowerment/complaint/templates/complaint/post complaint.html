@@ -1,0 +1,21 @@
+{% extends 'temp/public user.html' %}
+{% block base %}
+	<h1 align="center">POST COMPLAINT</h1>
+	<table align="center">
+        <form method="post">
+            {% csrf_token %}
+		<tr>
+			<td><b>COMPLAINT</b></td>
+			<td><textarea name="complaint" rows="6" required></textarea></td>
+		</tr>
+{#		<tr>#}
+{#			<td>DATE</td>#}
+{#			<td><input type="date" name="date"></td>#}
+{#		</tr>#}
+		<td></td>
+		<td><input type="submit" name="post" value="POST">
+        </td>
+        </form>
+	</table>
+
+{% endblock %}

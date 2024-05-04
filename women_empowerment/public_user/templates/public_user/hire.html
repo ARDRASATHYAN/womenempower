@@ -1,0 +1,20 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+
+	<h1 align="center">HIRE</h1>
+	<table align="center">
+		<form method="POST">
+            {% csrf_token %}
+
+		<tr>
+			<td>JOB DETAILS</td>
+			<td><input type="text" name="jd" required=""></td>
+		</tr>
+			<tr>
+			<td></td>
+			<td><input type="submit" value="POST" name="hire"></td>
+		</tr>
+	</form>
+	</table>
+
+{% endblock %}

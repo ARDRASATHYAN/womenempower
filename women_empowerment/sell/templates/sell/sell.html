@@ -1,0 +1,39 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+	<h2 align="center">SELL PRODUCTS</h2>
+<div class="container">
+
+     <table align="center" border="4" class="table table-bordered text-center">
+
+
+	<tr>
+		<td><b>USER NAME</b></td>
+		<td><b>PRODUCT</b></td>
+		<td><b>QUANTITY</b></td>
+		<td><b>PRICE</b></td>
+		<td><b>IMAGE</b></td>
+
+		</tr>
+         {% if objval %}
+         {% for obj in objval %}
+	<tr>
+		<td>{{ obj.pu_id }}</td>
+		<td>{{ obj.p.product_name }}</td>
+		<td>{{ obj.quantity }}</td>
+		<td>{{ obj.p.price}}</td>
+		<td><img src="/static/{{ obj.p.image }}" name="image" width="90" height="100"> </td>
+		<td>
+{#            <a href="{% url 'remove' idd=obj.se_id %}" class="btn btn-danger">REMOVE</a>#}
+        </td>
+      <td>
+            <a href="{% url 'productsell' idd=obj.o_id %}" class="btn btn-primary">SELL</a>
+        </td>
+
+    </tr>
+     {% endfor %}
+     {% endif %}
+
+     </table>
+</div>
+
+{% endblock %}

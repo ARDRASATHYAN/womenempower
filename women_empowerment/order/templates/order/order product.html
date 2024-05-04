@@ -1,0 +1,30 @@
+{% extends 'temp/public user.html' %}
+{% block base %}
+	<h1 align="center">ORDER PRODUCT</h1>
+	<table align="center">
+        <form method="post">
+		{% csrf_token %}
+ 
+ 
+		<tr>
+			<td>PRODUCT NAME</td>
+			<td><input type="text" value="{{ objval.product_name }}" name="product" required=""></td>
+		</tr>
+		<tr>
+			<td>QUANTITY</td>
+			<td><input type="text" name="qty" required=""></td>
+		</tr>
+		<tr>
+			<td>IMAGE</td>
+			<td><img src="/static/{{ objval.image }}" height="100" width="90"></td>
+		</tr>
+		<tr>
+			<td>PRICE</td>
+			<td><input type="price" value="{{ objval.price }}" name="date" required=""></td>
+		</tr>
+		<td></td>
+		<td><input type="submit" name="add" value="CONFIRM">
+</form>
+	</table>
+
+{% endblock %}

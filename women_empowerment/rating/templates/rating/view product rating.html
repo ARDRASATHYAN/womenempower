@@ -1,0 +1,24 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+
+	<h1 align="center">VIEW RATING</h1>
+    <DIV CLASS="container">
+<table border="1" align="center" class="table table-bordered">
+        <tr>
+            <td><b>RATING</b></td>
+            <td><b>PRODUCT</b></td>
+
+
+        </tr>
+     {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.rating }}</td>
+            <td>{{ obj.p.product_name }}</td>
+
+        </tr>
+{% endfor %}
+{% endif %}
+    </table>
+    </DIV>
+{% endblock %}

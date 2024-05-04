@@ -1,0 +1,27 @@
+{% extends 'temp/index..html' %}
+{% block base %}
+<form method="POST">
+{% csrf_token %}
+	<h1 align="center">LOGIN FORM</h1>
+	<table align="center">
+		<tr>
+			<td> USER NAME</td>
+			<td><input type="text" name="name" required=""></td>
+		</tr>
+		<tr>
+			<td> PASSWORD</td>
+			<td><input type="password" name="pass" required=""></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="login" name="log"></td>
+		</tr>
+	</table>
+{% if msg %}
+    <script>
+        alert("{{ msg }}")
+    </script>
+{% endif %}
+
+</form>
+{% endblock %}

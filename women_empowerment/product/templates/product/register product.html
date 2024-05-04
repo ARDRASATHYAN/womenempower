@@ -1,0 +1,46 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+
+<h1 align="center"> PRODUCT REGISTRATION</h1>
+<table align="center">
+<form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+	<tr>
+		<td>PRODUCT NAME</td>
+		<td><input type="text" name="pn" required=""></td>
+	</tr>
+	<tr>
+		<td>PRODUCT CODE</td>
+		<td><input type="text" name="pc" required=""></td>
+	</tr>
+	<tr>
+				<td>DESCRIPTION</td>
+				<td><textarea name="des" rows="6" required=""></textarea></td>
+			
+			</tr>
+	<tr>
+		<td>TYPE</td>
+		<td><input type="text" name="type" required=""></td>
+	</tr>
+	<tr>
+		<td>PRICE</td>
+		<td><input type="text" name="price" required=""></td>
+	</tr>
+	<tr>
+		<td>STOCK</td>
+		<td><input type="text" name="stock" required=""></td>
+	</tr>
+	<tr>
+		<td>IMAGE</td>
+		<td><input type="file" name="image" required=""></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td><input type="submit" name="sub" value="REGISTER"></td>
+		
+	</tr>
+    </form>
+</table>
+
+{% endblock %}

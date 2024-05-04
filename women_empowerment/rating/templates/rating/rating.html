@@ -1,0 +1,106 @@
+{% extends 'temp/public user.html' %}
+{% block base %}
+
+<style>
+
+
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  padding: 2%;
+  flex-grow: 1;
+  flex-basis: 16%;
+
+  display: flex; /* so child elements can use flexbox stuff too! */
+}
+
+
+
+.product-image img {
+  max-width: 100%;
+}
+.product-info {
+  margin-top: auto;
+}
+
+
+    .star-rating {
+  border:solid 1px #ccc;
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:1.5em;
+  justify-content:space-around;
+  padding:0 .2em;
+  text-align:center;
+  width:5em;
+}
+
+.star-rating input {
+  display:none;
+}
+
+.star-rating label {
+  color:#ccc;
+  cursor:pointer;
+}
+
+.star-rating :checked ~ label {
+  color:#f90;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color:#fc0;
+}
+
+
+
+</style>
+
+
+
+<h1 align="center">RATING</h1>
+    <form method="post">
+     {% csrf_token %}
+     <tr>
+                <td><b>PRODUCT</b></td>
+                <td>
+                    <select name="p">
+
+                        <option value="--select--"></option>
+                        {% for ob in val %}
+                        <option value="{{ ob.p_id }}">{{ ob.product_name }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+    <br> <br>
+
+
+
+
+		<table align="center">
+
+       <div class="star-rating">
+  <input type="radio" id="5-stars" name="rating" value="5" />
+  <label for="5-stars" class="star">&#9733;</label>
+  <input type="radio" id="4-stars" name="rating" value="4" />
+  <label for="4-stars" class="star">&#9733;</label>
+  <input type="radio" id="3-stars" name="rating" value="3" />
+  <label for="3-stars" class="star">&#9733;</label>
+  <input type="radio" id="2-stars" name="rating" value="2" />
+  <label for="2-stars" class="star">&#9733;</label>
+  <input type="radio" id="1-star" name="rating" value="1" />
+  <label for="1-star" class="star">&#9733;</label>
+</div>
+
+
+         <p><input type="SUBMIT" value="Rate"></P>
+    </div>
+        </table>
+    </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<h1 align="center">MANAGE REGISTERED USER</h1>
+    <div class="container">
+<table border="1" align="center">
+        <tr>
+            <td><b>NAME</b></td>
+            <td><b>ADDRESS</b></td>
+            <td><b>GENDER</b></td>
+            <td><b>PHONE NUMBER</b></td>
+            <td><b>CATEGORY</b></td>
+            <td><b>EMAIL</b></td>
+            <td><b>STATUS</b></td>
+             
+        </tr>
+     {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.name }}</td>
+        	<td>{{ obj.address }}</td>
+        	<td>{{ obj.gender }}</td>
+            <td>{{ obj.phone_number }}</td>
+            <td>{{ obj.catogory }}</td>
+            <td>{{ obj.email }}</td>
+            <td>{{ obj.status }}</td>
+        	<td><a href="{% url 'approve' idd=obj.r_id %}">Approve</a> </td>
+            <td><a href="{% url 'reject' idd=obj.r_id %}">Reject</a></td>
+        </tr>
+    {% endfor %}
+{% endif %}
+    </table>
+    </div>
+{% endblock %}

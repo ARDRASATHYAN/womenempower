@@ -1,0 +1,36 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+	<h1 align="center">MANAGE PRODUCT</h1>
+    <div class="container">
+<table border="1" align="center">
+        <tr>
+            <td><b>PRODUCT NAME</b></td>
+            <td><b>PRODUCT CODE</b></td>
+            <td><b>DESCRIPTION</b></td>
+            <td><b>TYPE</b></td>
+            <td><b>PRICE</b></td>
+            <td><b>STOCK</b></td>
+            <td><b>IMAGE</b></td>
+            <td><b>STATUS</b></td>
+             
+        </tr>
+     {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.product_name }}</td>
+        	<td>{{ obj.product_code }}</td>
+        	<td>{{ obj.description }}</td>
+            <td>{{ obj.type }}</td>
+            <td>{{ obj.price }}</td>
+            <td>{{ obj.stock }}</td>
+            <td>{{ obj.image }}</td>
+            <td>{{ obj.status }}</td>
+        	<td><a href="{% url 'aapprove' idd=obj.p_id %}">Approve</a> </td>
+            <td><a href="{% url 'areject' idd=obj.p_id %}">Reject</a></td>
+        </tr>
+    {% endfor %}
+{% endif %}
+    </table>
+    </div>
+{% endblock %}

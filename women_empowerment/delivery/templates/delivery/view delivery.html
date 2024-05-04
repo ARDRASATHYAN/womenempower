@@ -1,0 +1,27 @@
+	{% extends 'temp/public user.html' %}
+{% block base %}
+<h1 align="center">VIEW DELIVERY STATUS</h1>
+    <form method="post">
+        {% csrf_token %}
+    <table align="center" >
+        {% for ob in val %}
+ <tr>
+            <td>PRODUCT NAME</td>
+     <td><input type="text" name="pn" value="{{ ob.product }}" readonly></td>
+ </tr>
+    <tr>
+            <td>QUANTITY</td>
+        <td><input type="text" name="qty" value="{{ ob.quantity }}" readonly></td>
+    </tr>
+    <tr>
+            <td>USERNAME</td>
+        <td><input type="text" name="user" value="{{ ob.username }}" readonly></td>
+
+
+
+        </tr>
+    <td><input type="submit" name="sub" value="SUBMIT"></td>
+        {% endfor %}
+    </table>
+    </form>
+{% endblock %}

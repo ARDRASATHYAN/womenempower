@@ -1,0 +1,25 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+
+	<h1 align="center">VIEW SALES REPORT</h1>
+    <div class="container">
+<table class="table table-bordered" align="center">
+        <tr>
+            <td><b>PRODUCT NAME</b></td>
+            <td><b>PRICE</b></td>
+            <td><b>REPORT</b></td>
+             
+        </tr>
+     {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.product_name }}</td>
+        	<td>{{ obj.price }}</td>
+            <td>{{ obj.report }}</td>
+        	
+        </tr>
+    {% endfor %}
+{% endif %}
+    </table>
+    </div>
+{% endblock %}

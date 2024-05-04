@@ -1,0 +1,23 @@
+{% extends 'temp/public user.html' %}
+{% block base %}
+
+	<h1 align="center">VIEW REPLY</h1>
+      <div class="container">
+<table border="1" align="center" class="table table-bordered text-center">
+        <tr>
+            <td><b>REPLY</b></td>
+            <td><b>DATE</b></td>
+             
+        </tr>
+    {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.reply}}</td>
+        	<td>{{ obj.date }}</td>
+        	
+        </tr>
+{% endfor %}
+{% endif %}
+    </table>
+      </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+
+	<h1 align="center">HIRE LABOUR</h1>
+    <div class="container">
+<table border="1" align="center">
+        <tr>
+            <td><b>NAME</b></td>
+            <td><b>ADDRESS</b></td>
+            <td><b>GENDER</b></td>
+            <td><b>QUALIFICATION</b></td>
+            <td><b>EXPERIENCE</b></td>
+            <td><b>SKILL</b></td>
+            <td><b>PHONE NUMBER</b></td>
+            <td><b>EMAIL</b></td>
+             
+        </tr>
+    {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.name }}</td>
+        	<td>{{ obj.address }}</td>
+            <td>{{ obj.gender }}</td>
+            <td>{{ obj.qualification }}</td>
+            <td>{{ obj.experience }}</td>
+            <td>{{ obj.skill }}</td>
+            <td>{{ obj.phone_number }}</td>
+            <td>{{ obj.email }}</td>
+            <td>
+                <a href="{% url 'hire' %}">Hire</a>
+            </td>
+        	
+        </tr>
+    {% endfor %}
+{% endif %}
+    </table>
+    </div>
+{% endblock %}

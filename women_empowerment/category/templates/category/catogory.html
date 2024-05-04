@@ -1,0 +1,19 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<h1 align="center">CATOGORY</h1>
+	<table align="center">
+		<form method="POST">
+             {% csrf_token %}
+
+		<tr>
+			<td>CATOGORY</td>
+			<td><input type="text" name="ct" required=""></td>
+		</tr>
+			<tr>
+			<td></td>
+			<td><input type="submit" value="POST" name="catogory"></td>
+		</tr>
+	</form>
+	</table>
+
+{% endblock %}

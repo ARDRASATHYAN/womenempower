@@ -1,0 +1,25 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+	<h1 align="center">VIEW RATING</h1>
+    <div class="container">
+<table  align="center" class="table table-bordered text-center" >
+        <tr>
+            <td><b>RATING</b></td>
+            <td><b>PRODUCT</b></td>
+            
+             
+        </tr>
+    {% if objval %}
+    {% for obj in objval %}
+        <tr>
+             <td>{{ obj.rating }}</td>
+        	<td>{{ obj.p.product_name }}</td>
+
+            
+        </tr>
+{% endfor %}
+{% endif %}
+    </table>
+    </div>
+{% endblock %}

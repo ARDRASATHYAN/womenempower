@@ -1,0 +1,28 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+	<h1 align="center">VIEW ORDER</h1>
+    <div class="container">
+<table align="center" class="table table-bordered text-center">
+        <tr style="font-weight: bolder">
+            <td><b>PRODUCT NAME</b></td>
+            <td><b>QUANTITY</b></td>
+            <td><b>ORDER DATE</b></td>
+            <td><b>PU_ID</b></td>
+            
+             
+        </tr>
+    {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.p_id }}</td>
+            <td>{{ obj.quantity }}</td>
+            <td>{{ obj.order_date }}</td>
+            <td>{{ obj.pu_id }}</td>
+
+        	
+        </tr>
+    {% endfor %}
+{% endif %}
+    </table>
+    </div>
+{% endblock %}

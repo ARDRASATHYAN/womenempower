@@ -1,0 +1,27 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+	<h1 align="center">VIEW COMPLAINT</h1>
+     <div class="container">
+<table border="1" align="center" class="table table-bordered">
+        <tr>
+            <td><b>COMPLAINT</b></td>
+            <td><b>DATE</b></td>
+            <td><b>TIME</b></td>
+            <td><b>U_ID</b></td>
+             
+        </tr>
+    {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.complaint }}</td>
+        	<td>{{ obj.date }}</td>
+        	<td>{{ obj.time }}</td>
+            <td>{{ obj.pu_id }}</td>
+            <td><a href="{% url 'postreply' idd=obj.c_id %}"><button type="button" class="btn btn-success">Reply</button></a> </td>
+        </tr>
+{% endfor %}
+{% endif %}
+    </table>
+     </div>
+{% endblock %}

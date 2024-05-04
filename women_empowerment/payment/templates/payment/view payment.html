@@ -1,0 +1,28 @@
+{% extends 'temp/registered user.html' %}
+{% block base %}
+	<h1 align="center">VIEW PAYMENT</h1>
+      <div class="container">
+<table border="1" align="center">
+        <tr>
+            <td><b>BANK NAME</b></td>
+            <td><b>BANK ACCOUNT NUMBER</b></td>
+            <td><b>TOTAL AMOUNT</b></td>
+            <td><b>PAYMENT TYPE</b></td>
+            <td><b>IFSC CODE</b></td>
+             
+        </tr>
+     {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.bank_name }}</td>
+        	<td>{{ obj.account_number }}</td>
+        	<td>{{ obj.total_amount }}</td>
+            <td>{{ obj.payment_type }}</td>
+            <td>{{ obj.ifsc_code }}</td>
+        	
+        </tr>
+    {% endfor %}
+{% endif %}
+    </table>
+      </div>
+{% endblock %}

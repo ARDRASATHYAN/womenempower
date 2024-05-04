@@ -1,0 +1,38 @@
+{% extends 'temp/public user.html' %}
+{% block base %}
+	<h2 align="center">MANAGE HIRED NOTIFICATION</h2>
+    <DIV CLASS="container">
+
+
+     <table align="center" border="4" class="table table-bordered text-center">
+
+
+	<tr>
+		<td><b>NAME</b></td>
+		<td><b>DATE</b></td>
+		<td><b>JOB DETAILS</b></td>
+        <td><b>STATUS</b></td>
+		
+
+		</tr>
+         {% if objval %}
+         {% for obj in objval %}
+	<tr>
+		<td>{{ obj.r_id }}</td>
+		<td>{{ obj.date }}</td>
+		<td>{{ obj.job_details }}</td>
+        <td>{{ obj.status }}</td>
+		<td>
+            <a href="{% url 'papprove'  idd=obj.h_id %}" class="btn btn-danger">Approve</a>
+        </td>
+      <td>
+            <a href="{% url 'preject' idd=obj.h_id %}}"class="btn btn-primary">Reject</a>
+        </td>
+
+    </tr>
+         {% endfor %}
+     {% endif %}
+
+     </table>
+    </DIV>
+{% endblock %}

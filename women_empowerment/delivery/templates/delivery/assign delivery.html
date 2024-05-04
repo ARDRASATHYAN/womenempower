@@ -1,0 +1,32 @@
+{% extends 'temp/public user.html' %}
+{% block base %}
+
+<h1 align="center">CONFIRM DELIVERY</h1>
+      <div class="container">
+<table align="center" BORDER="1" CLASS="table table-bordered text-center">
+          <tr>
+              <td><b>PRODUCT NAME</b></td>
+              <td><b>QUANTITY</b></td>
+              <td><b>USERNAME</b></td>
+{#            <td>STATUS</td>#}
+
+
+        </tr>
+    {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.product }}</td>
+            <td>{{ obj.quantity }}</td>
+            <td>{{ obj.username }}</td>
+{#            <td>{{ obj.status }}</td>#}
+            <td><a href="{% url 'delivery' idd=obj.se_id %}" >Delivered</a></td>
+
+
+        </tr>
+    {% endfor %}
+   {% endif %}
+
+</table>
+      </div>
+
+{% endblock %}

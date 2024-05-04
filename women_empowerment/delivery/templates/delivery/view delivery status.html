@@ -1,0 +1,37 @@
+
+{% extends 'temp/registered user.html' %}
+{% block base %}
+
+	<h1 align="center">VIEW DELIVERY STATUS</h1>
+      <div class="container">
+    <table align="center" border="1" class="table table-bordered text-center">
+ <tr>
+     <td><b>PRODUCT NAME</b></td>
+     <td><b>QUANTITY</b></td>
+     <td><b>USERNAME</b></td>
+     <td><b>AMOUNT</b></td>
+     <td><b>ORDER DATE</b></td>
+     <td><b>STATUS</b></td>
+
+
+
+        </tr>
+    {% if objval %}
+    {% for obj in objval %}
+        <tr>
+        	<td>{{ obj.product_name }}</td>
+            <td>{{ obj.quantity}}</td>
+            <td>{{ obj.pu_id}}</td>
+            <td>{{ obj.amount }}</td>
+            <td>{{ obj.order_date }}</td>
+            <td>{{ obj.status }}</td>
+{#            <td><a href="" >Deliverd</a></td>#}
+
+
+        </tr>
+
+    {% endfor %}
+   {% endif %}
+    </table>
+      </div>
+{% endblock %}

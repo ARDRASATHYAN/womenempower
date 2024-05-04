@@ -1,0 +1,69 @@
+{% extends 'temp/public user.html' %}
+{% block base %}
+<form method="POST">
+    {% csrf_token %}
+
+<h1 align="center">UPDATE PROFILE</h1>
+<table align="center">
+    {% for obj in objval %}
+	<tr>
+		<td>NAME</td>
+		<td><input type="text" name="name" value="{{ obj.name }}" READONLY></td>
+	</tr>
+	<tr>
+		<td>ADDRESS</td>
+		<td><input type="text" name="address"  value="{{ obj.address }}" ></td>
+	</tr>
+	<tr>
+				<td>GENDER </td>
+				<td height="50">
+					<input type="text" name="gender" value="{{ obj.gender }}">
+					
+				</td>
+				
+			</tr>
+	
+	<tr>
+		<td>QUALIFICATION</td>
+		<td><input type="text" name="quali"  value="{{ obj.qualification }}" ></td>
+	</tr>
+	<tr>
+		<td>EXPERIENCE</td>
+		<td><input type="text" name="exp" value="{{ obj.experience }}" ></td>
+	</tr>
+	<tr>
+		<td>SKILLS</td>
+		<td><input type="text" name="skill" value="{{ obj.skill }}" ></td>
+	</tr>
+	<tr>
+		<td>PHONE NUMBER</td>
+		<td><input type="text" name="phone" value="{{ obj.phone_number }}" ></td>
+	</tr>
+	
+
+	
+	<tr>
+		<td>EMAIL</td>
+		<td><input type="text" name="em" value="{{ obj.email }}" ></td>
+	</tr>
+	<tr>
+		<td>PASSWORD</td>
+		<td><input type="password" name="pass" value="{{ obj.password }}"></td>
+	</tr>
+
+	
+	<tr>
+		<td></td>
+		<td><input type="submit" name="sub" value="REGISTER"></td>
+		
+	</tr>
+    {% endfor %}
+</table>
+{% if msg %}
+    <script>
+        alert("{{ msg }}")
+    </script>
+{% endif %}
+</form>	
+{% endblock %}
+111
